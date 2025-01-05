@@ -10,3 +10,25 @@ body {
   background-color: salmon;
   font-family: "Playwrite AU SA", cursive;
 }
+
+h1 {
+  font-size: 32px;
+}
+
+@media (min-width: 1000px) {
+  h1 {
+    font-size: 32px;
+  }
+}
+
+@media (min-width: 751px) and (max-width: 999px) {
+  h1 {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 750px) {
+  h1 {
+    font-size: 16px;
+  }
+}
