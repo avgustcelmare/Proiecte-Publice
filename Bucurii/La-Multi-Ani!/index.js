@@ -10,7 +10,7 @@ updateText();
 
 function updateText() {
   containerEl.innerHTML = `
-    <h1>vă doresc ${careers[careerIndex].slice(-1) === "e" ? "multă" : careers[careerIndex].slice(-1) === "i" ? "multe" : "mult"} ${careers[careerIndex].slice(0, characterIndex)}  în noul an!</h1>
+    <h1>vă urează ${careers[careerIndex].slice(-1) === "e" ? "multă" : careers[careerIndex].slice(-1) === "i" ? "multe" : "mult"} ${careers[careerIndex].slice(0, characterIndex)}  în noul an!</h1>
   `;
 
   characterIndex++;
