@@ -1,6 +1,0 @@
-player = new Player(25, canvas.height - 150, 50, 50, '#FF5858');
-
-
-            console.log (jump);
-
-                    console.log (this.grounded, this.jumpTimer);
