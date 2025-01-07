@@ -15,6 +15,8 @@ function addNewImages () {
     newImageEl.src = `https://picsum.photos/300?random=${Math.floor(Math.random()*20000)}`;
   
     imageContainerEl.appendChild(newImageEl);
+
+    btnEl.innerHTML = "Încarcă mai multe poze frumoase";
   }
 };
 
