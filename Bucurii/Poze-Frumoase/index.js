@@ -3,7 +3,7 @@ const imageContainerEl = document.querySelector(".image-container");
 const btnEl = document.querySelector(".btn");
 
 btnEl.addEventListener("click", () => {
-  imaginiPerClick = 5;
+  setImagesPerClick();
   addNewImages();
   scrollToButton();
 });
@@ -16,7 +16,7 @@ function addNewImages () {
   
     imageContainerEl.appendChild(newImageEl);
 
-    btnEl.innerHTML = "Încarcă mai multe poze frumoase";
+    btnEl.innerHTML = "Încarcă mai multe Poze Frumoase";
   }
 };
 
@@ -25,4 +25,14 @@ function scrollToButton() {
     behavior: "smooth", 
     block: "center"  
   });
+}
+
+function setImagesPerClick() {
+  if (window.matchMedia("(max-width: 410px)").matches) {
+    imaginiPerClick = 5;
+  } else if (window.matchMedia("(min-width: 411px) and (max-width: 1000px)").matches) {
+    imaginiPerClick = 7;
+  } else if (window.matchMedia("(min-width: 1000px)").matches) {
+    imaginiPerClick = 6;
+  }
 }
