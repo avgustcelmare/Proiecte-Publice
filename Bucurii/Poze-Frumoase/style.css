@@ -15,8 +15,8 @@ body {
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, .3);
   background-color: lightgray;
-  width: 300px;
-  height: 300px;
+  width: 290px;
+  height: 290px;
 }
 
 .btn {
@@ -40,8 +40,8 @@ h1 {
 
 @media (min-width: 1000px) {
   .image-container img {
-    width: 300px;
-    height: 300px;
+    width: 290px;
+    height: 290px;
   }
 }
 

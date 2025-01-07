@@ -3,7 +3,7 @@ const imageContainerEl = document.querySelector(".image-container");
 const btnEl = document.querySelector(".btn");
 
 btnEl.addEventListener("click", () => {
-  imaginiPerClick = 3;
+  imaginiPerClick = 5;
   addNewImages();
   scrollToButton();
 });
