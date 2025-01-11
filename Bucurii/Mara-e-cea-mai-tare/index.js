@@ -1,13 +1,13 @@
 const testimonials = [
   {
-    name: "Sabina C.",
-    photoUrl: "https://images.unsplash.com/photo-1664575602554-2087b04935a5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8d29tYW58ZW58MHx8MHx8fDA%3D",
-    text: "Nu pot spune suficient despre Mara. Mara m-a ajutat cu adevărat să-mi recapăt încrederea în mine.",
-  },
-  {
     name: "Vlad M.",
     photoUrl: "https://plus.unsplash.com/premium_photo-1689977871600-e755257fb5f8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fG1hbnxlbnwwfHwwfHx8MA%3D%3D",
     text: "Întotdeauna am fost impresionat de dedicarea Mariei de a răspândi bunătatea și pozitivitatea. Prezența ei întruchipează cu adevărat căldură și compasiune, ceea ce face o bucurie să recomand o persoană atât de nobilă.",
+  },
+  {
+    name: "Sabina C.",
+    photoUrl: "https://images.unsplash.com/photo-1664575602554-2087b04935a5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8d29tYW58ZW58MHx8MHx8fDA%3D",
+    text: "Nu pot spune suficient despre Mara. Mara m-a ajutat cu adevărat să-mi recapăt încrederea în mine.",
   },
   {
     name: "Camelia I.",
