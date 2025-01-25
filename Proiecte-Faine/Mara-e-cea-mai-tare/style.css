@@ -10,10 +10,10 @@ body {
 
 .testimonial-container {
   width: 500px;
-  min-width: 400px;
+  min-width: 100px;
 
   padding: 70px 20px 20px 20px;
-  margin: 5px;
+  margin: 20px;
 
   background-color: slateblue;
   border-radius: 10px;

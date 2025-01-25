@@ -2,13 +2,14 @@ const testimonials = [
   {
     name: "Vlad M.",
     photoUrl: "https://plus.unsplash.com/premium_photo-1689977871600-e755257fb5f8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fG1hbnxlbnwwfHwwfHx8MA%3D%3D",
-    text: "Întotdeauna am fost impresionat de dedicarea Mariei de a răspândi bunătatea și pozitivitatea. Prezența ei întruchipează cu adevărat căldură și compasiune, ceea ce face o bucurie să recomand o persoană atât de nobilă.",
+    text: "Întotdeauna am fost impresionat de dedicarea Marei de a răspândi bunătatea și pozitivitatea. Prezența ei întruchipează cu adevărat căldură și compasiune, ceea ce face o bucurie să recomand o persoană atât de nobilă.",
   },
   {
     name: "Sabina C.",
     photoUrl: "https://images.unsplash.com/photo-1664575602554-2087b04935a5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8d29tYW58ZW58MHx8MHx8fDA%3D",
     text: "Nu pot spune suficient despre Mara. Mara m-a ajutat cu adevărat să-mi recapăt încrederea în mine.",
   },
+
   {
     name: "Camelia I.",
     photoUrl: "https://images.unsplash.com/photo-1464863979621-258859e62245?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NzN8fHdvbWFufGVufDB8fDB8fHww",
@@ -27,7 +28,7 @@ const testimonials = [
   {
     name: "Adriana D.",
     photoUrl: "https://images.unsplash.com/photo-1641044225007-225e8d892b6d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fHBvcnRyYWl0JTIwd29tYW58ZW58MHx8MHx8fDA%3D",
-    text: "Capacitatea Mariei de a ajuta oamenii mi-a depășit așteptările. Strategiile practice pe care le-am învățat de la ea, au fost de neprețuit în dezvoltarea mea profesională. O recomand pe Mara tuturor celor care doresc să își îmbunătățească abilitățile de organizare.",
+    text: "Capacitatea Marei de a ajuta oamenii mi-a depășit așteptările. Strategiile practice pe care le-am învățat de la ea, au fost de neprețuit în dezvoltarea mea profesională. O recomand pe Mara tuturor celor care doresc să își îmbunătățească abilitățile de organizare.",
   }
 ];
 
@@ -37,9 +38,18 @@ const textEl = document.querySelector(".text");
 
 const usernameEl = document.querySelector(".username");
 
+const bodyEl = document.querySelector("body");
+
 let index = 0;
 
-updateTestimonial();
+let timerMesajNou;
+
+
+bodyEl.addEventListener("click", () => {
+  clearTimeout(timerMesajNou);
+  updateTestimonial();
+});
+
 
 function updateTestimonial () {
   const {name, photoUrl, text} = testimonials[index];
@@ -47,10 +57,14 @@ function updateTestimonial () {
   textEl.innerText = text;
   usernameEl.innerText = name;
   index++;
+
   if (index === testimonials.length) {
     index = 0;
   }
-  setTimeout(() => {
+  
+  timerMesajNou = setTimeout(() => {
     updateTestimonial();
   }, 9000);
 };
+
+updateTestimonial();
