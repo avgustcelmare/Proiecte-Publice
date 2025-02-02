@@ -116,4 +116,13 @@ form {
   .search-result {
     width: 100%;
   }
+
+  form {
+    flex-direction: column;
+  }
+
+  #search-input {
+    margin: 20px;
+    width: 90%;
+  }
 }
