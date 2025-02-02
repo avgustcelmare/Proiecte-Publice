@@ -16,10 +16,26 @@ body {
   border-color: rgb(102, 34, 165);
   border-width: 6px;
   border-radius: 15px;
+
+  margin: 15px;
   padding: 20px;
   text-align: center;
 }
 
 h1 {
   margin-top: 0;
+}
+
+.calculul {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+  font-size: 60px;
+}
+
+.valideaza-calculul {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  background-color:rgb(102, 34, 165);
 }
