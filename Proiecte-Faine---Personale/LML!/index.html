@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Te iubesc!</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Century Gothic;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      height: 100vh;
+      background-color: #55bafd;
+      color: rgb(5, 79, 190);
+      font-weight: bolder;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    .container {
+      max-width: 90%;
+    }
+    .big {
+      font-size: 4em;
+      margin: 0.5em 0;
+
+    }
+    .small {
+      font-size: 2em;
+      margin: 0.5em 0;
+    }
+  </style>
+</head>
+<body>
+  
+  <div class="container">
+    <div id="small-text-top" class="small"></div>
+    <div id="big-text" class="big"></div>
+    <div id="small-text-bottom" class="small"></div>
+  </div>
+
+  <script>
+    const now = new Date();
+    const day = now.getDate();
+    const month = now.getMonth(); // Ianuarie este 0 ca asa functioneaza
+    const year = now.getFullYear();
+
+    const display = (big, smallBottom = '', smallTop = '') => {
+      document.getElementById("big-text").textContent = big;
+      document.getElementById("small-text-top").textContent = smallTop;
+      document.getElementById("small-text-bottom").textContent = smallBottom;
+    };
+
+    const monthsBetween = (date1, date2) => {
+      return (date2.getFullYear() - date1.getFullYear()) * 12 + date2.getMonth() - date1.getMonth();
+    };
+
+    const yearsBetween = (date1, date2) => {
+      return date2.getFullYear() - date1.getFullYear() - (date2 < new Date(date2.getFullYear(), date1.getMonth(), date1.getDate()) ? 1 : 0);
+    };
+
+    const date1 = new Date(2011, 7, 6); // 06.08.2011 dar Ianuarie este 0 si August este 7
+    const date2 = new Date(2012, 7, 18); // 18.08.2012 dar Ianuarie este 0 si August este 7
+
+    if (day === 6) {
+      if (month === 7) {
+        const years = yearsBetween(date1, now);
+        display("LMA", `LMA pentru cei ${years} ani frumoși petrecuți împreună 🥰`);
+      } else if (month === 1) {
+        const months = monthsBetween(date1, now);
+        display("LMJDA", `LMJDA pentru cele  ${Math.floor(months / 6)} Jumătăți de An frumoase petrecute împreună 🥰`);
+      } else if ([4, 10].includes(month)) {
+        const months = monthsBetween(date1, now);
+        display("LMSDA", `LMSDA pentru cele ${Math.floor(months / 3)} Sferturi De An frumoase petrecute împreună 🥰`);
+      } else if ([0, 2, 3, 5, 6, 8, 9, 11].includes(month)) {
+        const months = monthsBetween(date1, now);
+        display("LML", `LML pentru cele ${months} Luni frumoase petrecute împreună 🥰`);
+      }
+    } else if (day === 18) {
+      if (month === 7) {
+        const years = yearsBetween(date2, now);
+        display("LMA", `LMA pentru cei ${years} ani frumoși de căsătorie 🥰`);
+      } else if (month === 1) {
+        const months = monthsBetween(date2, now);
+        display("LMJDA", `LMJDA pentru cele  ${Math.floor(months / 6)} Jumătăți de An frumoase de căsătorie 🥰`);
+      } else if ([4, 10].includes(month)) {
+        const months = monthsBetween(date2, now);
+        display("LMSDA", `LMSDA pentru cele ${Math.floor(months / 3)} Sferturi De An frumoase de căsătorie 🥰`);
+      } else if ([0, 2, 3, 5, 6, 8, 9, 11].includes(month)) {
+        const months = monthsBetween(date2, now);
+        display("LML", `LML pentru cele ${months} Luni frumoase de căsătorie 🥰`);
+      }
+    } else {
+      const currentDate = new Date(year, month, day);
+      let next6 = new Date(year, month, 6);
+      let next18 = new Date(year, month, 18);
+
+      if (currentDate >= next6) {
+        next6 = new Date(year, month + 1, 6);
+      }
+      if (currentDate >= next18) {
+        next18 = new Date(year, month + 1, 18);
+      }
+
+      const diffTo6 = (next6 - currentDate) / (1000 * 60 * 60 * 24);
+      const diffTo18 = (next18 - currentDate) / (1000 * 60 * 60 * 24);
+
+      const closestDiff = Math.round(Math.min(diffTo6, diffTo18));
+
+      if (closestDiff === 1) {
+        display(`o singura zi`, "🥰🥰🥰", "Mai este" );
+      } else {
+        display(`${closestDiff} zile`, "🥰🥰🥰", "Mai sunt" );
+      }
+    }
+  </script>
+</body>
+</html>
