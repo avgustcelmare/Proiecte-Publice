@@ -4,10 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Te iubesc!</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: Century Gothic;
+      font-family: "Roboto", sans-serif;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -15,7 +16,7 @@
       height: 100vh;
       background-color: #55bafd;
       color: rgb(5, 79, 190);
-      font-weight: bolder;
+      font-weight: 900;
       padding: 20px;
       box-sizing: border-box;
     }
@@ -53,16 +54,19 @@
       document.getElementById("small-text-bottom").textContent = smallBottom;
     };
 
-    const monthsBetween = (date1, date2) => {
-      return (date2.getFullYear() - date1.getFullYear()) * 12 + date2.getMonth() - date1.getMonth();
+    const monthsBetween = (primaZiLaCalcul, ziuaADouaLaCalzulCareInCazulMeuEsteAzi) => {
+      return (ziuaADouaLaCalzulCareInCazulMeuEsteAzi.getFullYear() - primaZiLaCalcul.getFullYear()) * 12 + ziuaADouaLaCalzulCareInCazulMeuEsteAzi.getMonth() - primaZiLaCalcul.getMonth();
     };
 
-    const yearsBetween = (date1, date2) => {
-      return date2.getFullYear() - date1.getFullYear() - (date2 < new Date(date2.getFullYear(), date1.getMonth(), date1.getDate()) ? 1 : 0);
+    const yearsBetween = (primaZiLaCalcul, ziuaADouaLaCalzulCareInCazulMeuEsteAzi) => {
+      return ziuaADouaLaCalzulCareInCazulMeuEsteAzi.getFullYear() - primaZiLaCalcul.getFullYear() - (ziuaADouaLaCalzulCareInCazulMeuEsteAzi < new Date(ziuaADouaLaCalzulCareInCazulMeuEsteAzi.getFullYear(), primaZiLaCalcul.getMonth(), primaZiLaCalcul.getDate()) ? 1 : 0);
     };
 
     const date1 = new Date(2011, 7, 6); // 06.08.2011 dar Ianuarie este 0 si August este 7
     const date2 = new Date(2012, 7, 18); // 18.08.2012 dar Ianuarie este 0 si August este 7
+    const date3 = new Date(2016, 5, 20); // 20.06.2016 dar Ianuarie este 0 si Iunie este 5
+    const date4 = new Date(2012, 4, 1); // 01.05.2012 dar Ianuarie este 0 si Mai este 4
+
 
     if (day === 6) {
       if (month === 7) {
@@ -70,32 +74,67 @@
         display("LMA", `LMA pentru cei ${years} ani frumoși petrecuți împreună 🥰`);
       } else if (month === 1) {
         const months = monthsBetween(date1, now);
-        display("LMJDA", `LMJDA pentru cele  ${Math.floor(months / 6)} Jumătăți de An frumoase petrecute împreună 🥰`);
+        display("LMJDA", `LMJDA pentru cele  ${Math.floor(months / 6)} Jumătăți frumoase de An petrecute împreună 🥰`);
       } else if ([4, 10].includes(month)) {
         const months = monthsBetween(date1, now);
-        display("LMSDA", `LMSDA pentru cele ${Math.floor(months / 3)} Sferturi De An frumoase petrecute împreună 🥰`);
+        display("LMSDA", `LMSDA pentru cele ${Math.floor(months / 3)} Sferturi frumoase de An petrecute împreună 🥰`);
       } else if ([0, 2, 3, 5, 6, 8, 9, 11].includes(month)) {
         const months = monthsBetween(date1, now);
         display("LML", `LML pentru cele ${months} Luni frumoase petrecute împreună 🥰`);
       }
+
     } else if (day === 18) {
       if (month === 7) {
         const years = yearsBetween(date2, now);
-        display("LMA", `LMA pentru cei ${years} ani frumoși de căsătorie 🥰`);
+        display("LMA", `LMA pentru cei ${years} ani frumoși de căsătorie 🤵👰‍♀️`);
       } else if (month === 1) {
         const months = monthsBetween(date2, now);
-        display("LMJDA", `LMJDA pentru cele  ${Math.floor(months / 6)} Jumătăți de An frumoase de căsătorie 🥰`);
+        display("LMJDA", `LMJDA pentru cele  ${Math.floor(months / 6)} Jumătăți frumoase de An de căsătorie 🤵👰‍♀️`);
       } else if ([4, 10].includes(month)) {
         const months = monthsBetween(date2, now);
-        display("LMSDA", `LMSDA pentru cele ${Math.floor(months / 3)} Sferturi De An frumoase de căsătorie 🥰`);
+        display("LMSDA", `LMSDA pentru cele ${Math.floor(months / 3)} Sferturi frumoase de An de căsătorie 🤵👰‍♀️`);
       } else if ([0, 2, 3, 5, 6, 8, 9, 11].includes(month)) {
         const months = monthsBetween(date2, now);
-        display("LML", `LML pentru cele ${months} Luni frumoase de căsătorie 🥰`);
+        display("LML", `LML pentru cele ${months} Luni frumoase de căsătorie 🤵👰‍♀️`);
       }
+
+    } else if (day === 20) {
+      if (month === 5) {
+        const years = yearsBetween(date3, now);
+        display("LMA", `LMA pentru cei ${years} ani frumoși de când suntem părinți 🐣`);
+      } else if (month === 11) {
+        const months = monthsBetween(date3, now);
+        display("LMJDA", `LMJDA pentru cele  ${Math.floor(months / 6)} Jumătăți frumoase de An de când suntem părinți 🐣`);
+      } else if ([2, 8].includes(month)) {
+        const months = monthsBetween(date3, now);
+        display("LMSDA", `LMSDA pentru cele ${Math.floor(months / 3)} Sferturi frumoase de An de când suntem părinți 🐣`);
+      } else if ([0, 1, 3, 4, 6, 7, 9, 10].includes(month)) {
+        const months = monthsBetween(date3, now);
+        display("LML", `LML pentru cele ${months} Luni frumoase de când suntem părinți 🐣`);
+      }
+    
+    } else if (day === 1) {
+      if (month === 4) {
+        const years = yearsBetween(date4, now);
+        display("LMA", `LMA pentru cei ${years} ani frumoși de când locuim împreună 🏠🤗`);
+      } else if (month === 10) {
+        const months = monthsBetween(date4, now);
+        display("LMJDA", `LMJDA pentru cele  ${Math.floor(months / 6)} Jumătăți frumoase de An de când locuim împreună 🏠🤗`);
+      } else if ([1, 7].includes(month)) {
+        const months = monthsBetween(date4, now);
+        display("LMSDA", `LMSDA pentru cele ${Math.floor(months / 3)} Sferturi frumoase de An de când locuim împreună 🏠🤗`);
+      } else if ([0, 2, 3, 5, 6, 8, 9, 11].includes(month)) {
+        const months = monthsBetween(date4, now);
+        display("LML", `LML pentru cele ${months} Luni frumoase de când locuim împreună 🏠🤗`);
+      }
+
     } else {
       const currentDate = new Date(year, month, day);
       let next6 = new Date(year, month, 6);
       let next18 = new Date(year, month, 18);
+      let next20 = new Date(year, month, 20);
+      let next1 = new Date(year, month, 1);
+
 
       if (currentDate >= next6) {
         next6 = new Date(year, month + 1, 6);
@@ -103,16 +142,25 @@
       if (currentDate >= next18) {
         next18 = new Date(year, month + 1, 18);
       }
+      if (currentDate >= next20) {
+        next20 = new Date(year, month + 1, 20);
+      }
+      if (currentDate >= next1) {
+        next1 = new Date(year, month + 1, 1);
+      }
 
       const diffTo6 = (next6 - currentDate) / (1000 * 60 * 60 * 24);
       const diffTo18 = (next18 - currentDate) / (1000 * 60 * 60 * 24);
+      const diffTo20 = (next20 - currentDate) / (1000 * 60 * 60 * 24);
+      const diffTo1 = (next1 - currentDate) / (1000 * 60 * 60 * 24);
 
-      const closestDiff = Math.round(Math.min(diffTo6, diffTo18));
+
+      const closestDiff = Math.round(Math.min(diffTo6, diffTo18, diffTo20, diffTo1));
 
       if (closestDiff === 1) {
-        display(`o singura zi`, "🥰🥰🥰", "Mai este" );
+        display(`o singura zi`, "🤗", "Mai este" );
       } else {
-        display(`${closestDiff} zile`, "🥰🥰🥰", "Mai sunt" );
+        display(`${closestDiff} zile`, "🤗", "Mai sunt" );
       }
     }
   </script>
