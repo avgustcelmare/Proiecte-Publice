@@ -86,31 +86,31 @@
     } else if (day === 18) {
       if (month === 7) {
         const years = yearsBetween(date2, now);
-        display("LMA", `LMA pentru cei ${years} ani frumoși de căsătorie 🤵👰‍♀️`);
+        display("LMA", `LMA pentru cei ${years} ani frumoși de căsătorie 👰‍♀️🤵`);
       } else if (month === 1) {
         const months = monthsBetween(date2, now);
-        display("LMJDA", `LMJDA pentru cele  ${Math.floor(months / 6)} Jumătăți frumoase de An de căsătorie 🤵👰‍♀️`);
+        display("LMJDA", `LMJDA pentru cele  ${Math.floor(months / 6)} Jumătăți frumoase de An de căsătorie 👰‍♀️🤵`);
       } else if ([4, 10].includes(month)) {
         const months = monthsBetween(date2, now);
-        display("LMSDA", `LMSDA pentru cele ${Math.floor(months / 3)} Sferturi frumoase de An de căsătorie 🤵👰‍♀️`);
+        display("LMSDA", `LMSDA pentru cele ${Math.floor(months / 3)} Sferturi frumoase de An de căsătorie 👰‍♀️🤵`);
       } else if ([0, 2, 3, 5, 6, 8, 9, 11].includes(month)) {
         const months = monthsBetween(date2, now);
-        display("LML", `LML pentru cele ${months} Luni frumoase de căsătorie 🤵👰‍♀️`);
+        display("LML", `LML pentru cele ${months} Luni frumoase de căsătorie 👰‍♀️🤵`);
       }
 
     } else if (day === 20) {
       if (month === 5) {
         const years = yearsBetween(date3, now);
-        display("LMA", `LMA pentru cei ${years} ani frumoși de când suntem părinți 🐣`);
+        display("LMA", `LMA pentru cei ${years} ani frumoși de când suntem părinții unui pui atât de minunat! 🐣`);
       } else if (month === 11) {
         const months = monthsBetween(date3, now);
-        display("LMJDA", `LMJDA pentru cele  ${Math.floor(months / 6)} Jumătăți frumoase de An de când suntem părinți 🐣`);
+        display("LMJDA", `LMJDA pentru cele  ${Math.floor(months / 6)} Jumătăți frumoase de An de când suntem părinții unui pui atât de minunat! 🐣`);
       } else if ([2, 8].includes(month)) {
         const months = monthsBetween(date3, now);
-        display("LMSDA", `LMSDA pentru cele ${Math.floor(months / 3)} Sferturi frumoase de An de când suntem părinți 🐣`);
+        display("LMSDA", `LMSDA pentru cele ${Math.floor(months / 3)} Sferturi frumoase de An de când suntem părinții unui pui atât de minunat! 🐣`);
       } else if ([0, 1, 3, 4, 6, 7, 9, 10].includes(month)) {
         const months = monthsBetween(date3, now);
-        display("LML", `LML pentru cele ${months} Luni frumoase de când suntem părinți 🐣`);
+        display("LML", `LML pentru cele ${months} Luni frumoase de când suntem părinții unui pui atât de minunat! 🐣`);
       }
     
     } else if (day === 1) {
@@ -158,7 +158,7 @@
       const closestDiff = Math.round(Math.min(diffTo6, diffTo18, diffTo20, diffTo1));
 
       if (closestDiff === 1) {
-        display(`o singura zi`, "🤗", "Mai este" );
+        display(`o singură zi`, "🤗", "Mai este" );
       } else {
         display(`${closestDiff} zile`, "🤗", "Mai sunt" );
       }
